@@ -1,0 +1,13 @@
+/Resources/Languages/
+
+
+who = Dicci chi sei
+
+
+yourname = Il tuo nome
+
+
+yourage = Quanti anni hai
+
+
+

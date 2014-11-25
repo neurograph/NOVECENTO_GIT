@@ -1,0 +1,12 @@
+/Resources/Languages/
+
+
+who = Who are you?
+
+
+yourname = Your name
+
+
+yourage = How old are you?
+
+
