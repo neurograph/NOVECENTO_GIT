@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{3C7FD1EE-8F08-ABB6-4DC2-09DA2C45A312}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_6_0;UNITY_4_6;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_OSX;UNITY_PRO_LICENSE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\AVANTI.cs" />
+     <Compile Include="Assets\GizmosController.cs" />
+     <Compile Include="Assets\Image Processing\Scripts\Example.cs" />
+     <Compile Include="Assets\ImageProcess.cs" />
+     <Compile Include="Assets\LIST.cs" />
+     <Compile Include="Assets\LanguageManager\LanguageEditor\Language.cs" />
+     <Compile Include="Assets\LanguageManager\LanguageEditor\LanguageController.cs" />
+     <Compile Include="Assets\LanguageManager\LanguageEditor\LanguageManager.cs" />
+     <Compile Include="Assets\Materials\GUITextureSize_CORNICE.cs" />
+     <Compile Include="Assets\MicControl\C# version\MicControlC.cs" />
+     <Compile Include="Assets\OnMouseOver.cs" />
+     <Compile Include="Assets\RotateBy.cs" />
+     <Compile Include="Assets\Scripts\ColorHuePicker.cs" />
+     <Compile Include="Assets\Scripts\ColorIndicator.cs" />
+     <Compile Include="Assets\Scripts\ColorSaturationBrightnessPicker.cs" />
+     <Compile Include="Assets\Scripts\Draggable.cs" />
+     <Compile Include="Assets\Scripts\ExampleColorReceiver.cs" />
+     <Compile Include="Assets\Scripts\HSBColor.cs" />
+     <Compile Include="Assets\Scripts\Puppeteer.cs" />
+     <Compile Include="Assets\Scripts\Puppeteer2.cs" />
+     <Compile Include="Assets\UImanager.cs" />
+     <Compile Include="Assets\altroGIZMO.cs" />
+     <Compile Include="Assets\change.cs" />
+     <Compile Include="Assets\iTween\Plugins\iTween.cs" />
+     <Compile Include="Assets\interfaceManager.cs" />
+     <Compile Include="Assets\loadlevel.cs" />
+     <Compile Include="Assets\sceneManager.cs" />
+     <Compile Include="Assets\selettore.cs" />
+     <Compile Include="Assets\sparaRAY.cs" />
+     <Compile Include="Assets\swipeScript.cs" />
+     <None Include="Assets\MicControl\C# version\ReadMe.txt" />
+     <None Include="Assets\Resources\Languages\English.txt" />
+     <None Include="Assets\Resources\Languages\Italian.txt" />
+     <None Include="Assets\iTween\ReadMe!\ReadMe!.txt" />
+     <None Include="Assets\MicControl\Javascript version (original)\ReadMe.txt" />
+     <None Include="Assets\Image Processing\READ-ME.txt" />
+     <None Include="Assets\Resources\Languages\French.txt" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{D1E11BB6-2E3D-899B-0259-86A069161C28}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{F4C12F4C-11C0-3565-02CC-8047F5999177}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
