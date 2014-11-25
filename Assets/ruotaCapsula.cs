@@ -10,6 +10,8 @@ public class ruotaCapsula : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		transform.Rotate(100*Time.deltaTime,0,0);
 	
 	}
 }
