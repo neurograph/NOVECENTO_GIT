@@ -282,7 +282,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: .860000014
   m_Drag: .5
-  m_AngularDrag: .0500000007
+  m_AngularDrag: .200000003
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -298,7 +298,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: .200000003
+  m_Radius: .5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &56394636
 Renderer:
@@ -814,7 +814,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 747146999}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.02124357, z: 15.5436459}
+  m_LocalPosition: {x: -5.44000006, y: 1.01999998, z: 13.6199999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2015830164}
@@ -839,8 +839,8 @@ Rigidbody:
   m_GameObject: {fileID: 747146999}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
+  m_Drag: 5
+  m_AngularDrag: .200000003
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1166,7 +1166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e08526ba168b345b19792c454495733b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
 --- !u!1 &1188054066
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,7 +1224,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 2.9000001
   m_Drag: .5
-  m_AngularDrag: .0500000007
+  m_AngularDrag: .200000003
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1241,7 +1240,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: .200000003
+  m_Radius: .5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1188054070
 Renderer:
@@ -1405,7 +1404,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1399941456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.396451, z: 15.724514}
+  m_LocalPosition: {x: -5.44000006, y: -2.4000001, z: 13.8000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2015830164}
@@ -1430,8 +1429,8 @@ Rigidbody:
   m_GameObject: {fileID: 1399941456}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
+  m_Drag: 5
+  m_AngularDrag: .200000003
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1654,7 +1653,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1711087341}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.7990818, z: 15.8354216}
+  m_LocalPosition: {x: -5.44000006, y: -4.80000019, z: 13.9200001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2015830164}
@@ -1679,8 +1678,8 @@ Rigidbody:
   m_GameObject: {fileID: 1711087341}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
+  m_Drag: 5
+  m_AngularDrag: .200000003
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1833,10 +1832,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1735825934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e08526ba168b345b19792c454495733b, type: 3}
+  m_Script: {fileID: 11500000, guid: f5234277690c54120b4614d365d792ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 1
 --- !u!1 &1762630581
 GameObject:
   m_ObjectHideFlags: 0
@@ -2147,7 +2146,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 4.30000019
   m_Drag: .5
-  m_AngularDrag: .0500000007
+  m_AngularDrag: .200000003
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -2193,7 +2192,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: .200000003
+  m_Radius: .5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &2145108612
 MeshFilter:

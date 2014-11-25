@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{7B706C46-B44C-892A-A53D-1CBD996E8F7F}</ProjectGuid>
+	<ProjectGuid>{FE2DD83E-B8B7-315B-537A-9D3052DEDD8A}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_6_0;UNITY_4_6;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_OSX;UNITY_PRO_LICENSE;ENABLE_DUCK_TYPING</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_6_0;UNITY_4_6;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_OSX;UNITY_PRO_LICENSE</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -46,36 +46,39 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\LanguageManager\LanguageEditor\Editor\LanguageEditor.cs" />
-     <Compile Include="Assets\MicControl\Editor\VolumeBarC.cs" />
+     <Compile Include="Assets\Image Processing\Scripts\Example.cs" />
+     <Compile Include="Assets\Image Processing\Scripts\ImageProcess.cs" />
+     <Compile Include="Assets\Materials\GUITextureSize_CORNICE.cs" />
+     <Compile Include="Assets\MicControl\C# version\MicControlC.cs" />
+     <Compile Include="Assets\Scripts\AVANTI.cs" />
+     <Compile Include="Assets\Scripts\ColorHuePicker.cs" />
+     <Compile Include="Assets\Scripts\ColorIndicator.cs" />
+     <Compile Include="Assets\Scripts\ColorSaturationBrightnessPicker.cs" />
+     <Compile Include="Assets\Scripts\Draggable.cs" />
+     <Compile Include="Assets\Scripts\ExampleColorReceiver.cs" />
+     <Compile Include="Assets\Scripts\GizmosController.cs" />
+     <Compile Include="Assets\Scripts\HSBColor.cs" />
+     <Compile Include="Assets\Scripts\LIST.cs" />
+     <Compile Include="Assets\Scripts\OnMouseOver.cs" />
+     <Compile Include="Assets\Scripts\Puppeteer.cs" />
+     <Compile Include="Assets\Scripts\Puppeteer2.cs" />
+     <Compile Include="Assets\Scripts\RotateBy.cs" />
+     <Compile Include="Assets\Scripts\altroGIZMO.cs" />
+     <Compile Include="Assets\Scripts\selettore.cs" />
+     <Compile Include="Assets\Scripts\sparaRAY.cs" />
      <None Include="Assets\MicControl\C# version\ReadMe.txt" />
-     <None Include="Assets\Resources\Languages\English.txt" />
-     <None Include="Assets\Resources\Languages\Italian.txt" />
-     <None Include="Assets\iTween\ReadMe!\ReadMe!.txt" />
+     <None Include="Assets\Shaders\ColorHue.shader" />
+     <None Include="Assets\Shaders\ColorSaturationBrightness.shader" />
      <None Include="Assets\MicControl\Javascript version (original)\ReadMe.txt" />
+     <None Include="Assets\Shaders\SolidColor.shader" />
      <None Include="Assets\Image Processing\READ-ME.txt" />
-     <None Include="Assets\Resources\Languages\French.txt" />
- <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>/Users/Giovanni/provaGIT/INTERFACE/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
- </Reference>
- <Reference Include="Assembly-UnityScript">
- <HintPath>/Users/Giovanni/provaGIT/INTERFACE/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
- <Reference Include="UnityEditor.UI">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.0/Editor/UnityEditor.UI.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.Graphs">
- <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.Graphs.dll</HintPath>
- </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
-      <Project>{D1E11BB6-2E3D-899B-0259-86A069161C28}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
-    <ProjectReference Include="Assembly-CSharp-vs.csproj">
-      <Project>{3C7FD1EE-8F08-ABB6-4DC2-09DA2C45A312}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{C018B5A9-2AD3-AC93-4D10-53718CA3E870}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
