@@ -12,18 +12,16 @@ public class UImanager : MonoBehaviour {
 	Texture2D selfieBox;
 	WebCamTexture webcamTexture; 
 	Sprite sprite;
+	string frontName;
+	string backName;
 	public Language activeLang = Language.Italian;
 
-	public float a;
-	public float b;
-	public float c;
-	public float d;
+
 
 
 	// Use this for initialization
 	void Start(){
-		selfie = GameObject.Find("USER");
-		//selfie = GameObject.Find("selfie");
+		selfie = GameObject.Find("selfie");
 		WebCamDevice[] devices = WebCamTexture.devices;
 		//detect the front camera to use for selfie
 		for( int i = 0 ; i < devices.Length ; i++ ) {
@@ -31,11 +29,11 @@ public class UImanager : MonoBehaviour {
 			
 			if (devices[i].isFrontFacing) {
 				
-				//frontCamName = devices[i].name;
+				frontName = devices[i].name;
 				
 			} else {
 				
-				//backCamName = devices[i].name;
+				backName = devices[i].name;
 				
 			}
 			
@@ -44,14 +42,14 @@ public class UImanager : MonoBehaviour {
 
 
 	void OnGUI(){
-
+		//each effect create a texture that is converted to sprite for the header
 		if (GUI.Button(new Rect(Screen.width-200, 22, 200, 22), "Grayscale"))
 		{ 	 _tex = ImageProcess.SetGrayscale(selfieBox);
 			sprite = Sprite.Create(ImageProcess.SetGrayscale(selfieBox), new Rect(0,0,selfieBox.width,selfieBox.height), new Vector2(0,0));
 			GameObject.Find("selfieBox").GetComponent<Image>().overrideSprite = sprite;
 			//GameObject.Find("_selfieBox").renderer.material.mainTexture = _tex ;
 		}
-		//sprite = ImageProcess.SetGrayscale(selfieBox);
+
 		if (GUI.Button(new Rect(Screen.width-200, 44, 200, 22), "Negative"))
 		{
 			_tex = ImageProcess.SetNegative(selfieBox);
@@ -85,7 +83,7 @@ public class UImanager : MonoBehaviour {
 	}
 
 	void Awake () {
-
+		//move pages out of the view
 		gg = GameObject.FindGameObjectsWithTag("outPage");
 		xx = (float)Screen.width;
 		foreach (GameObject page in gg)
@@ -96,7 +94,7 @@ public class UImanager : MonoBehaviour {
 			rt.localPosition = new Vector3(xx, rt.localPosition.y, rt.localPosition.z);
 		}
 
-		//selfie = GameObject.Find("selfie");
+
 
 	
 	}
@@ -107,7 +105,7 @@ public class UImanager : MonoBehaviour {
 	}
 
 	public void selectLanguage(string lang){
-
+		//receive language from button click
 		Debug.Log(lang);
 		switch(lang){
 		case "it":{
@@ -129,12 +127,13 @@ public class UImanager : MonoBehaviour {
 
 
 		}
-
+		//load file of the language
 		LanguageManager.LoadLanguageFile(activeLang);
 
 		GameObject[] labels = GameObject.FindGameObjectsWithTag("label");
 		foreach (GameObject ll in labels)
 		{
+			//each label receive text from a variable called like it's name
 			ll.GetComponent<Text>().text = LanguageManager.GetText(ll.name);	
 
 		
@@ -144,12 +143,10 @@ public class UImanager : MonoBehaviour {
 		changePage("language", "identity");
 
 
-		              //new Vector3(-xx, rt.localPosition.y, rt.localPosition.z), 2f
-		//rt.localPosition = new Vector3(-xx, rt.localPosition.y, rt.localPosition.z);
-
 	}
 
 	public void showHeader(){
+		//header need to be separate from the pages and it's called once
 		GameObject header = GameObject.Find("header");
 		GameObject.Find("nameUser").GetComponent<Text>().text = GameObject.Find("nameValue").GetComponent<Text>().text;
 		RectTransform rt = header.GetComponent<RectTransform>();
@@ -167,21 +164,21 @@ public class UImanager : MonoBehaviour {
 	}
 
 	public void startCamera(){
-		//selfie.renderer.enabled = true;
-		///ho creato un oggetto USER (vedi in start come lo selfie dipende da questo) con una maschera circolare...
+		//start capture - SELFIE
+		//object like selfie,selfieBox,userimg are scaled in negative because webcamtexture is flipped!!
 		webcamTexture = new WebCamTexture();
+		//to keep the frontcamera i'll insert a line like this 
+		//-------> webcamTexture.deviceName = frontName;
+		//frontName is setted in the start looping through devices
 		webcamTexture.Play();
 		selfie.GetComponent<RawImage>().texture = webcamTexture;
-		//selfie.GetComponent<GUITexture>().pixelInset = new Rect(a,b,c,d);
-		//selfie.GetComponent<GUITexture>().texture = webcamTexture;
-		//GameObject.Find("guitexture").GetComponent<GUITexture>().texture = webcamTexture;
-		//selfie.renderer.material.mainTexture = webcamTexture;
+	
 		
 
 	}
 
 	public void gotUser(){
-
+		//after selfie
 		changePage("page2","page3");
 
 	}
@@ -189,15 +186,13 @@ public class UImanager : MonoBehaviour {
 	public void capture (){
 
 		selfieBox = new Texture2D(webcamTexture.width, webcamTexture.height, TextureFormat.ARGB32, false);
-		//selfieBox.SetPixels((selfie.renderer.material.mainTexture as WebCamTexture).GetPixels());
-		//selfieBox.SetPixels((selfie.texture as WebCamTexture).GetPixels());
 		selfieBox.SetPixels((selfie.GetComponent<RawImage>().texture as WebCamTexture).GetPixels());
 		selfieBox.Apply(); 
 		sprite = Sprite.Create(selfieBox, new Rect(0,0,selfieBox.width,selfieBox.height), new Vector2(0,0));
 		GameObject.Find("selfieBox").GetComponent<Image>().overrideSprite = sprite;
-		//GameObject.Find("userimg").GetComponent<Image>().overrideSprite = sprite;
-		//changePage("page2", "page3");
-		selfie.GetComponent<RawImage>().enabled = false;
+		GameObject.Find("userimg").GetComponent<Image>().overrideSprite = sprite;
+		changePage("page2", "page3");
+		//selfie.GetComponent<RawImage>().enabled = false;
 
 	} 
 	
