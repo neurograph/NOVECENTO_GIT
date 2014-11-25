@@ -70,7 +70,6 @@
      <Compile Include="Assets\altroGIZMO.cs" />
      <Compile Include="Assets\change.cs" />
      <Compile Include="Assets\iTween\Plugins\iTween.cs" />
-     <Compile Include="Assets\interfaceManager.cs" />
      <Compile Include="Assets\loadlevel.cs" />
      <Compile Include="Assets\sceneManager.cs" />
      <Compile Include="Assets\selettore.cs" />
