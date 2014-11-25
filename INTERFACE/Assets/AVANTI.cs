@@ -16,7 +16,7 @@ public class AVANTI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+	//ciao giovanni
 	}
 	
 	// Update is called once per frame
