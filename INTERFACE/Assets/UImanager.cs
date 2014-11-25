@@ -14,10 +14,16 @@ public class UImanager : MonoBehaviour {
 	Sprite sprite;
 	public Language activeLang = Language.Italian;
 
+	public float a;
+	public float b;
+	public float c;
+	public float d;
+
 
 	// Use this for initialization
 	void Start(){
-		selfie = GameObject.Find("selfie");
+		selfie = GameObject.Find("USER");
+		//selfie = GameObject.Find("selfie");
 		WebCamDevice[] devices = WebCamTexture.devices;
 		//detect the front camera to use for selfie
 		for( int i = 0 ; i < devices.Length ; i++ ) {
@@ -90,7 +96,8 @@ public class UImanager : MonoBehaviour {
 			rt.localPosition = new Vector3(xx, rt.localPosition.y, rt.localPosition.z);
 		}
 
-		selfie = GameObject.Find("selfie");
+		//selfie = GameObject.Find("selfie");
+
 	
 	}
 	
@@ -160,11 +167,15 @@ public class UImanager : MonoBehaviour {
 	}
 
 	public void startCamera(){
-		selfie.renderer.enabled = true;
+		//selfie.renderer.enabled = true;
+		///ho creato un oggetto USER (vedi in start come lo selfie dipende da questo) con una maschera circolare...
 		webcamTexture = new WebCamTexture();
 		webcamTexture.Play();
-		GameObject.Find("guitexture").GetComponent<GUITexture>().texture = webcamTexture;
-		selfie.renderer.material.mainTexture = webcamTexture;
+		selfie.GetComponent<RawImage>().texture = webcamTexture;
+		//selfie.GetComponent<GUITexture>().pixelInset = new Rect(a,b,c,d);
+		//selfie.GetComponent<GUITexture>().texture = webcamTexture;
+		//GameObject.Find("guitexture").GetComponent<GUITexture>().texture = webcamTexture;
+		//selfie.renderer.material.mainTexture = webcamTexture;
 		
 
 	}
@@ -176,14 +187,17 @@ public class UImanager : MonoBehaviour {
 	}
 
 	public void capture (){
-		//selfie.renderer.enabled = false;
+
 		selfieBox = new Texture2D(webcamTexture.width, webcamTexture.height, TextureFormat.ARGB32, false);
-		selfieBox.SetPixels((selfie.renderer.material.mainTexture as WebCamTexture).GetPixels());
+		//selfieBox.SetPixels((selfie.renderer.material.mainTexture as WebCamTexture).GetPixels());
+		//selfieBox.SetPixels((selfie.texture as WebCamTexture).GetPixels());
+		selfieBox.SetPixels((selfie.GetComponent<RawImage>().texture as WebCamTexture).GetPixels());
 		selfieBox.Apply(); 
 		sprite = Sprite.Create(selfieBox, new Rect(0,0,selfieBox.width,selfieBox.height), new Vector2(0,0));
 		GameObject.Find("selfieBox").GetComponent<Image>().overrideSprite = sprite;
 		//GameObject.Find("userimg").GetComponent<Image>().overrideSprite = sprite;
 		//changePage("page2", "page3");
+		selfie.GetComponent<RawImage>().enabled = false;
 
 	} 
 	
