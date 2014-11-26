@@ -18,7 +18,7 @@ public class RotateBy : MonoBehaviour {
 //		if(speed < 80)
 //			speed = 1;
 //		
-//		transform.Rotate(Vector3.up * Time.deltaTime * speed, Space.World);
+		transform.Rotate(Vector3.up * Time.deltaTime * speed, Space.World);
 		
 	
 	}

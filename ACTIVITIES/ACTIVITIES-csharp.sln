@@ -5,6 +5,8 @@ Project("{6D5BF844-F3CF-DCAF-E8BD-02EA0EF15006}") = "ACTIVITIES", "Assembly-CSha
 EndProject
 Project("{6D5BF844-F3CF-DCAF-E8BD-02EA0EF15006}") = "ACTIVITIES", "Assembly-CSharp-vs.csproj", "{FE2DD83E-B8B7-315B-537A-9D3052DEDD8A}"
 EndProject
+Project("{6D5BF844-F3CF-DCAF-E8BD-02EA0EF15006}") = "ACTIVITIES", "Assembly-CSharp-Editor-firstpass-vs.csproj", "{B693A115-3D6A-5ABA-51BC-C63C8B7DF877}"
+EndProject
 Project("{6D5BF844-F3CF-DCAF-E8BD-02EA0EF15006}") = "ACTIVITIES", "Assembly-CSharp-Editor-vs.csproj", "{848F6359-0F46-D1D8-2486-E6A9BF28B368}"
 EndProject
 Global
@@ -21,6 +23,10 @@ Global
 		{FE2DD83E-B8B7-315B-537A-9D3052DEDD8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE2DD83E-B8B7-315B-537A-9D3052DEDD8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE2DD83E-B8B7-315B-537A-9D3052DEDD8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B693A115-3D6A-5ABA-51BC-C63C8B7DF877}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B693A115-3D6A-5ABA-51BC-C63C8B7DF877}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B693A115-3D6A-5ABA-51BC-C63C8B7DF877}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B693A115-3D6A-5ABA-51BC-C63C8B7DF877}.Release|Any CPU.Build.0 = Release|Any CPU
 		{848F6359-0F46-D1D8-2486-E6A9BF28B368}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{848F6359-0F46-D1D8-2486-E6A9BF28B368}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{848F6359-0F46-D1D8-2486-E6A9BF28B368}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -29,7 +35,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-		GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																																																																																																												GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

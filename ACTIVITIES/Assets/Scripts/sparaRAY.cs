@@ -7,8 +7,6 @@ public class sparaRAY : MonoBehaviour {
 	public GameObject preso;
 	public MonoBehaviour altro;
 	public bool primoContatto = true;
-	
-	public GameObject HT;
 	// Use this for initialization
 	void Start () {
 		
@@ -27,12 +25,16 @@ public class sparaRAY : MonoBehaviour {
         if (Physics.Raycast(ray, out hit, 1000) && hit.transform.tag == "base"){
 		primoContatto = false;
         Debug.DrawLine(ray.origin, hit.point);
-	    
-		HT = hit.transform.gameObject;
-		final = hit.point;
+	    final = hit.point;
 		
 		}
+		if (Physics.Raycast(ray, out hit, 1000) && hit.transform.tag == "pezzi"){
+			SendMessage("Avanti");
+			Avanti ();
+			
+		}
 		if(final != null && preso != null){
+		preso.transform.tag = "pezzoMOV";
 		preso.transform.localScale = new Vector3(1,1,1);
 		iTween.MoveUpdate(preso,final,.9f);
 		}
@@ -43,7 +45,6 @@ public class sparaRAY : MonoBehaviour {
 	
 	void Avanti(){
 	
-		
 		//final = null;
 		preso = null;
 		primoContatto = true;

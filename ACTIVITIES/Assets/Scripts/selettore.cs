@@ -7,13 +7,10 @@ public class selettore : MonoBehaviour {
 	public GameObject selezione;
 	private Vector3 initial;
 	public Vector3 DIMtavolozza;
-	
-	private GameObject[] pezziFisici;
-	
+	sceneManager sceneManager;
 	// Use this for initialization
 	void Start () {
-		
-	
+		sceneManager = GameObject.Find("sceneManager").GetComponent<sceneManager>();
 		
 	
 	}
@@ -28,12 +25,14 @@ public class selettore : MonoBehaviour {
         Debug.DrawLine(ray.origin, hit.point);
 		selezione = hit.transform.gameObject;
 		initial = hit.transform.position;
-		
+			
 		
 			}else if (selezione != null){
+
 				gameObject.GetComponent<sparaRAY>().preso = selezione;
 				gameObject.GetComponent<sparaRAY>().enabled = true;	
-				gameObject.GetComponent<selettore>().enabled = false;	
+				gameObject.GetComponent<selettore>().enabled = false;
+
 			}
 }
 	}
@@ -43,24 +42,13 @@ public class selettore : MonoBehaviour {
 		
 		GameObject clone = Instantiate(selezione,initial,Quaternion.identity) as GameObject;
 		clone.transform.localScale = DIMtavolozza;
-		clone.transform.parent = selezione.transform.parent;
-		
-		if(selezione.transform.rigidbody != null){
-		GameObject attacco = gameObject.GetComponent<sparaRAY>().HT;
-		selezione.transform.rigidbody.useGravity = true;
-		Mesh mesh = selezione.GetComponent<MeshFilter>().mesh;
-		if(attacco.GetComponent<MeshFilter>() == null)
-		attacco.AddComponent<MeshFilter>();
-		attacco.GetComponent<MeshFilter>().mesh = mesh;
-		attacco.renderer.material = selezione.renderer.material;
-		attacco.transform.localEulerAngles = selezione.transform.localEulerAngles;
-		Destroy (selezione);
-		}
-		
-		if(selezione != null){
+		clone.transform.parent = GameObject.Find(sceneManager.rootName).transform;
+		clone.transform.tag = "pezzi";
+
+		selezione.transform.parent = GameObject.Find("result").transform;
 		selezione.tag = "base";
 		selezione = null;
-		}
+
 		gameObject.GetComponent<sparaRAY>().enabled = false;	
 		gameObject.GetComponent<selettore>().enabled = true;	
 		
