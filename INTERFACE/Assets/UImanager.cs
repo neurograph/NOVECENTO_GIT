@@ -91,7 +91,8 @@ public class UImanager : MonoBehaviour {
 
 			Debug.Log(page.GetComponent<RectTransform>().localPosition);
 			RectTransform rt = page.GetComponent<RectTransform>();
-			rt.localPosition = new Vector3(xx, rt.localPosition.y, rt.localPosition.z);
+			//becuase pivot of the panels is in the middle
+			rt.localPosition = new Vector3(xx+xx/2, rt.localPosition.y, rt.localPosition.z);
 		}
 
 
@@ -204,7 +205,7 @@ public class UImanager : MonoBehaviour {
 		GameObject enterPage = GameObject.Find(next);
 		RectTransform rt = exitPage.GetComponent<RectTransform>();
 		Hashtable args = new Hashtable();
-		args.Add("position",new Vector3(-xx, rt.localPosition.y, rt.localPosition.z));
+		args.Add("position",new Vector3(-(xx+xx/2), rt.localPosition.y, rt.localPosition.z));
 		args.Add("time",timeTrans);
 		args.Add("islocal", true);
 		iTween.MoveTo(rt.gameObject, args);
