@@ -15,19 +15,27 @@ public class UImanager : MonoBehaviour {
 	string frontName;
 	string backName;
 	public Language activeLang = Language.Italian;
+	public Quaternion baseRotation;
 
 
 
 
 	// Use this for initialization
 	void Start(){
+
 		selfie = GameObject.Find("selfie");
+		baseRotation = selfie.transform.rotation;
+		//Debug.Log(baseRotation);
 		WebCamDevice[] devices = WebCamTexture.devices;
 		//detect the front camera to use for selfie
+		//prevent error on pc during test
+		frontName = devices[0].name;
+		backName = devices[0].name;
 		for( int i = 0 ; i < devices.Length ; i++ ) {
 			Debug.Log(devices[i].name);
 			
 			if (devices[i].isFrontFacing) {
+				Debug.Log("---");
 				
 				frontName = devices[i].name;
 				
@@ -36,6 +44,8 @@ public class UImanager : MonoBehaviour {
 				backName = devices[i].name;
 				
 			}
+
+		
 			
 		}
 	}
@@ -102,6 +112,7 @@ public class UImanager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 	
 	}
 
@@ -171,7 +182,13 @@ public class UImanager : MonoBehaviour {
 		//to keep the frontcamera i'll insert a line like this 
 		//-------> webcamTexture.deviceName = frontName;
 		//frontName is setted in the start looping through devices
+		webcamTexture.deviceName = frontName;
 		webcamTexture.Play();
+	 	//becuase webcamtexture front camera in devices are flipped/rotated
+		selfie.transform.rotation = baseRotation * Quaternion.AngleAxis(webcamTexture.videoRotationAngle, Vector3.forward);
+		GameObject.Find("selfieBox").transform.rotation = baseRotation * Quaternion.AngleAxis(webcamTexture.videoRotationAngle, Vector3.forward);
+		GameObject.Find("userimg").transform.rotation = baseRotation * Quaternion.AngleAxis(webcamTexture.videoRotationAngle, Vector3.forward);
+
 		selfie.GetComponent<RawImage>().texture = webcamTexture;
 	
 		
@@ -185,7 +202,7 @@ public class UImanager : MonoBehaviour {
 	}
 
 	public void capture (){
-
+		//selfie.transform.rotation = baseRotation * Quaternion.AngleAxis(90, Vector3.forward);
 		selfieBox = new Texture2D(webcamTexture.width, webcamTexture.height, TextureFormat.ARGB32, false);
 		selfieBox.SetPixels((selfie.GetComponent<RawImage>().texture as WebCamTexture).GetPixels());
 		selfieBox.Apply(); 
