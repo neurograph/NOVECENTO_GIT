@@ -50,6 +50,7 @@
      <Compile Include="Assets\Boomlagoon\JSON\TestScene\JSONObjectTester.cs" />
      <Compile Include="Assets\Image Processing\Scripts\Example.cs" />
      <Compile Include="Assets\Image Processing\Scripts\ImageProcess.cs" />
+     <Compile Include="Assets\LineDispenser.cs" />
      <Compile Include="Assets\Materials\GUITextureSize_CORNICE.cs" />
      <Compile Include="Assets\MicControl\C# version\MicControlC.cs" />
      <Compile Include="Assets\Scripts\AVANTI.cs" />

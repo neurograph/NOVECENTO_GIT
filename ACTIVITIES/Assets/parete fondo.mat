@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: SolidColor
-  m_Shader: {fileID: 4800000, guid: 10c3a0be7f0c64fc18a942fff0eac6ec, type: 3}
+  m_Name: parete fondo
+  m_Shader: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -25,4 +25,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .673035026, g: .673035026, b: .673035026, a: 0}
+        second: {r: 1, g: 1, b: 1, a: 1}
